@@ -8,7 +8,7 @@ module.exports.beauty = function beauty(bot, url) {
         caption: "oh beautiful lady!"
       })
       .catch(err => {
-        bot.sendMessage(chatId, `手冲失败+${err}`);
+        bot.sendMessage(chatId, `发送失败+${err}`);
       });
   });
 };

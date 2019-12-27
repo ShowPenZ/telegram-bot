@@ -7,7 +7,7 @@ let page = 1;
 module.exports.gaoxiao = function gaoxiao(bot, url) {
   bot.onText(/\/gaoxiao/, function onLoveText(msg) {
     const chatId = msg.chat.id;
-    console.log(results);
+    //console.log(results);
 
     if (results.length <= 0) {
       request.get(
@@ -16,7 +16,7 @@ module.exports.gaoxiao = function gaoxiao(bot, url) {
           encoding: null
         },
         (err, res, body) => {
-          console.log(url);
+          //console.log(url);
           if (!err) {
             const html = iconv.decode(body, "gb2312");
             const $ = cheerio.load(html, { decodeEntities: false });
@@ -29,7 +29,7 @@ module.exports.gaoxiao = function gaoxiao(bot, url) {
                 .find("a img")
                 .attr("gifsrc");
 
-              console.log(neihanObj.src);
+              //console.log(neihanObj.src);
 
               neihanObj.title = $(d)
                 .find("a img")
@@ -40,7 +40,7 @@ module.exports.gaoxiao = function gaoxiao(bot, url) {
               return results.push(neihanObj);
             });
 
-            console.log(results);
+            //console.log(results);
 
             const index = parseInt(Math.random() * results.length);
 
@@ -73,14 +73,14 @@ module.exports.gaoxiao = function gaoxiao(bot, url) {
         })
         .then(() => {
           // console.log(index, "index");
-          console.log(results.length, "deleteResult");
+          //console.log(results.length, "deleteResult");
           results.splice(index, 1);
           if (results.length <= 0) {
             page += 1;
           }
         })
         .catch(err => {
-          bot.sendMessage(chatId, "爬出了屎,sorry", err);
+          bot.sendMessage(chatId, "发送失败,sorry", err);
         });
     }
   });

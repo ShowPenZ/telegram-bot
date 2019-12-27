@@ -49,7 +49,6 @@ module.exports = {
   allState: function allState(pkg, cb) {
     const url = `https://api.npmjs.org/downloads/point/1900-01-01:${help.today()}/${pkg}`;
 
-    console.log(url);
     requestNPM(url, cb);
   },
 

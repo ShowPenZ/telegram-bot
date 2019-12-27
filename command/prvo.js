@@ -52,7 +52,7 @@ module.exports.prvo = function prvo(bot, url) {
                 caption: result[index].title
               })
               .catch(err => {
-                bot.sendMessage(chatId, "爬出了屎,sorry", err);
+                bot.sendMessage(chatId, "爬出问题,sorry", err);
               });
           } else {
             bot.sendMessage(chatId, "爬虫在看小电影");
@@ -68,11 +68,11 @@ module.exports.prvo = function prvo(bot, url) {
         })
         .then(() => {
           // console.log(index, "index");
-          console.log(result.length, "deleteResult");
+          //console.log(result.length, "deleteResult");
           result.splice(index, 1);
         })
         .catch(err => {
-          bot.sendMessage(chatId, "爬出了屎,sorry", err);
+          bot.sendMessage(chatId, "爬出问题,sorry", err);
         });
     }
   });

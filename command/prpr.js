@@ -11,13 +11,13 @@ module.exports.prpr = function prpr(bot, url) {
 
         bot
           .sendPhoto(chatId, result[index].file_url, {
-            caption: "手冲一时爽，一直手冲一直爽"
+            caption: "奇摸鸡"
           })
           .catch(err => {
-            bot.sendMessage(chatId, "手冲失败", err);
+            bot.sendMessage(chatId, "发送失败", err);
           });
       } else {
-        bot.sendMessage(chatId, "手冲失败");
+        bot.sendMessage(chatId, "发送失败");
       }
     });
   });
