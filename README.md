@@ -2,11 +2,20 @@
 
 based on yagop/node-telegram-bot-api
 
-# 关于如何申请机器人以及如何搭建请点击
+### 关于如何申请机器人以及如何搭建请点击
 
 [telegram bot](https://showpenz.github.io/2019/12/28/telegram-%E6%9C%BA%E5%99%A8%E4%BA%BA/)
 
-使用方法
+### 使用方法
+
+#### 第一种本地测试
+
+1. 直接 <code>npm i or yarn</code>
+2. 替换 testBot.js 内的 bot TOKEN,以及你的 vpn 密码，端口
+3. 最后直接在根目录运行 node testBot.js
+4. 打开 telegram 机器人发送相应命令即可
+
+#### 第二种线上部署使用
 
 1. 替换 config/config.js 下的 TOKEN，填入你申请的 telegram bot TOKEN
 2. 替换 config/url.js 下的 hostUrl，填入你自己的域名
