@@ -12,8 +12,13 @@ based on yagop/node-telegram-bot-api
 
 1. 直接 <code>npm i or yarn</code>
 2. 替换 testBot.js 内的 bot TOKEN,以及你的 vpn 密码，端口
-3. 最后直接在根目录运行 node testBot.js
-4. 打开 telegram 机器人发送相应命令即可
+3. 如果使用到 sendAnimation 方法 最简洁的办法修改 <code>node_modules/node-telegram-bot-api/src/telegram.js</code>;
+
+   第 866 行 <code>opts.qs.document = sendData[1] 修改为 opts.qs.animation = sendData[1]</code>;
+   也可以自己 fork yagop/node-telegram-bot-api 代码下来自己修改代码
+
+4. 最后直接在根目录运行 node testBot.js
+5. 打开 telegram 机器人发送相应命令即可
 
 #### 第二种线上部署使用
 
